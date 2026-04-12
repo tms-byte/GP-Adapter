@@ -1,0 +1,9 @@
+root_path: "/raid"
+root_path_ood: "/raid/ood_images"
+load_cache: false
+load_pre_feat: false
+dataset: "imagenet100"
+shots: 16
+# backbone candidates: "RN50", "ViT-B/16"
+backbone: "ViT-B/16"
+augment_epoch: 1
