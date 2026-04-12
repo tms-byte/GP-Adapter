@@ -59,10 +59,10 @@ Prompt-learning baselines are loaded from external training outputs. See `manife
 - LoCoOp repository: https://github.com/AtsuMiyai/LoCoOp
 
 If you want to regenerate the shared few-shot manifests from CoOp/LoCoOp training, use the following procedure:
-1. Replace LoCoOp's `datasets/imagenet.py` with [`patches/imagenet.py`](/home/saito/docker/GP-Adapter/patches/imagenet.py).
+1. Replace LoCoOp's `datasets/imagenet.py` with `patches/imagenet.py`.
 2. Run CoOp or LoCoOp training in the LoCoOp repository.
-3. Copy the resulting experiment directory under [`external/locoop_outputs/`](/home/saito/docker/GP-Adapter/external/locoop_outputs).
-4. Copy the exported `selected_shots.json` files from those outputs into the matching locations under [`manifests/`](/home/saito/docker/GP-Adapter/manifests).
+3. Copy the resulting experiment directory under `external/locoop_outputs/`.
+4. Copy the exported `selected_shots.json` files from those outputs into the matching locations under `manifests/`.
 
 At inference time, GP-Adapter reads the shared split from `manifests/`. `CoOp` and `LoCoOp` additionally read prompt checkpoints from `external/locoop_outputs/`.
 For the prompt-learning baselines, we used the default CoOp/LoCoOp hyperparameters. The only change was for ImageNet-100, where `topk` was set to `20`.
